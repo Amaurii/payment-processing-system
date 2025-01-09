@@ -9,7 +9,7 @@
     </parent>
     <groupId>com.example</groupId>
     <artifactId>payment-processing-system</artifactId>
-    <version>1.0-SNAPSHOT</version>
+    <version>1.0.0</version>
     <properties>
         <java.version>17</java.version>
     </properties>
@@ -65,4 +65,20 @@
             <artifactId>micrometer-registry-prometheus</artifactId>
         </dependency>
     </dependencies>
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+                <version>3.0.0</version> <!-- Substitua pela versão do Spring Boot -->
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>repackage</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
+    </build>
 </project>
