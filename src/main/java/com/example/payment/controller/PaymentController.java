@@ -36,7 +36,7 @@ public class PaymentController {
 
     @GetMapping("/{id}")
     public ResponseEntity<Payment> getPaymentById(@PathVariable String id) {
-        return paymentRepository.findById(id)
+        return paymentRepository.findByPaymentId(id)
                 .map(ResponseEntity::ok)
                 .orElse(ResponseEntity.notFound().build());
     }
