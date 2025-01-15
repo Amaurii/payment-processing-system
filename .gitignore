@@ -43,3 +43,5 @@ docker-compose.override.yml
 # Arquivos do IntelliJ
 .idea
 *.iml
+
+application-secrets.yml
