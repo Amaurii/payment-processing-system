@@ -16,6 +16,20 @@ spring:
       port: 27017
       database: payments_db
 
+cloud:
+  aws:
+    credentials:
+      access-key: xy
+      secret-key: xx
+    region:
+      static: us-east-1
+    sns:
+      topic:
+        arn: arn:aws:sns:us-east-1:529025971143:payment-events
+    sqs:
+      queues:
+        payment-processing: https://sqs.us-east-1.amazonaws.com/529025971143/payment-processing
+
 management:
   endpoints:
     web:
@@ -34,3 +48,4 @@ logging:
   level:
     root: INFO
     com.example.payment: DEBUG
+    org.springframework.cloud.aws.messaging.listener: DEBUG
