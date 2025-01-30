@@ -1,14 +1,14 @@
 package com.example.payment.repository;
 
-import com.example.payment.model.Payment;
+import com.example.payment.model.Order;
 import org.springframework.data.mongodb.repository.MongoRepository;
 import org.springframework.stereotype.Repository;
 
 import java.util.Optional;
 
 @Repository
-public interface PaymentRepository extends MongoRepository<Payment, String> {
+public interface OrderRepository extends MongoRepository<Order, String> {
 
-    Optional<Payment> findByPaymentId(String s);
+    Optional<Order> findById(String id);
 
 }

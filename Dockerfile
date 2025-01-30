@@ -5,7 +5,7 @@ FROM openjdk:17-jdk-slim
 WORKDIR /app
 
 # Copiar o arquivo JAR gerado pelo Maven ou Gradle
-COPY target/payment-processing-system-1.0.0.jar app.jar
+COPY target/*.jar app.jar
 
 # Expor a porta da aplicação
 EXPOSE 8080

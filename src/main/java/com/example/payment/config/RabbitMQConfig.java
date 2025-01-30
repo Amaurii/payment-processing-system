@@ -10,15 +10,15 @@ import org.springframework.context.annotation.Configuration;
 @Configuration
 public class RabbitMQConfig {
 
-    public static final String PAYMENT_QUEUE = "payments";
+    public static final String ORDER_QUEUE = "orders";
     public static final String DLQ_QUEUE = "dlq.queue";
     public static final String DLX_EXCHANGE = "dlx.exchange";
 
     @Bean
     public Queue paymentQueue() {
-        return QueueBuilder.durable(PAYMENT_QUEUE)
-                .withArgument("x-dead-letter-exchange", DLX_EXCHANGE)
+        return QueueBuilder.durable(ORDER_QUEUE)
                 .withArgument("x-dead-letter-routing-key", DLQ_QUEUE)
+                .withArgument("x-dead-letter-exchange", DLX_EXCHANGE)
                 .build();
     }
 
